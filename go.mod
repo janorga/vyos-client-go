@@ -1,4 +1,4 @@
-module github.com/foltik/vyos-client-go
+module github.com/janorga/vyos-client-go
 
 go 1.18
 
