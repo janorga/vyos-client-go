@@ -26,8 +26,8 @@ type Client struct {
 }
 type ConfigService struct{ client *Client }
 
-func New(url string, key string) *Client {
-	return NewWithClient(&http.Client{Timeout: 10 * time.Second}, url, key)
+func New(url string, key string, timeout int32) *Client {
+	return NewWithClient(&http.Client{Timeout: time.Duration(timeout) * time.Second}, url, key)
 }
 
 func NewWithClient(c *http.Client, url string, key string) *Client {
